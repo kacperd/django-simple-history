@@ -257,7 +257,7 @@ class HistoricalRecords(object):
                                                       null=True),
             'history_user': models.ForeignKey(
                 user_model, null=True, related_name=self.user_related_name,
-                on_delete=models.SET_NULL),
+                on_delete=models.SET_NULL, db_constraint=False),
             'history_type': models.CharField(max_length=1, choices=(
                 ('+', _('Created')),
                 ('~', _('Changed')),
